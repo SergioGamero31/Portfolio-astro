@@ -1,54 +1,47 @@
 ---
-import { getCollection, getEntries } from "astro:content"
 import Badge from "./Badge.astro"
 import Button from "./Button.astro"
 import GithubIcon from "./icons/GithubIcon.astro"
 import LinkIcon from "./icons/LinkIcon.astro"
-
-const projects = await getCollection("projects")
+import PROJECTS from "../constants/projects"
 ---
 
-<section class="flex flex-col gap-6 max-w-4xl mx-auto py-16">
-  <h2 class="text-2xl max-w-xs font-medium my-8">
+<section id="projects" class="max-w-4xl mx-auto scroll-m-20">
+  <h2 class="text-2xl max-w-xs font-geist font-light my-14">
     Estos son algunos proyectos en los que he trabajado
   </h2>
   <div class="flex flex-col gap-16">
     {
-      projects.map(async project => {
-        const { data } = project
-        const relatedTags = await getEntries(data.tags)
-
+      PROJECTS.map(({ title, description, image, github, demo, tags }) => {
         return (
           <article class="flex flex-col md:flex-row gap-10 justify-between">
             <div
               class:list={[
                 "flex w-full md:w-1/2 rounded-xl overflow-hidden",
-                data.image.order
+                image.order
               ]}
             >
               <img
-                src={data.image.src}
-                alt={data.image.alt}
+                src={image.src}
+                alt={image.alt}
                 class="object-cover hover:scale-110 transition-transform duration-300"
               />
             </div>
             <div class="flex flex-col justify-between gap-4 md:w-1/2">
               <div class="flex flex-col gap-3 md:">
-                <h3 class="text-2xl font-geist font-light ">{data.title}</h3>
-                <p class="text-gray-400 text-balance">{data.description}</p>
+                <h3 class="text-xl font-geist font-light">{title}</h3>
+                <p class="text-gray-400 text-balance">{description}</p>
                 <ul class="flex flex-wrap gap-2">
-                  {relatedTags.map(tag => (
-                    <li>
-                      <Badge color={tag.data.color}>{tag.data.title}</Badge>
-                    </li>
+                  {tags.map(tag => (
+                    <Badge color={tag.color}>{tag.name}</Badge>
                   ))}
                 </ul>
               </div>
               <menu class="flex gap-3 border-t border-neutral-700 pt-5">
-                <Button href={data.github} type="secondary">
+                <Button href={github} type="secondary">
                   <GithubIcon /> Código
                 </Button>
-                <Button href={data.demo} type="secondary">
+                <Button href={demo} type="secondary">
                   <LinkIcon /> Demo
                 </Button>
               </menu>
