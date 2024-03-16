@@ -1,77 +1,16 @@
 ---
-const skills = [
-  {
-    name: "HTML5",
-    icon: "/assets/icons/html5.svg",
-    alt: "Icono de HTML5"
-  },
-  {
-    name: "CSS3",
-    icon: "/assets/icons/css.svg",
-    alt: "Icono de CSS3"
-  },
-  {
-    name: "JavaScript",
-    icon: "/assets/icons/javascript.svg",
-    alt: "Icono de JavaScript"
-  },
-  {
-    name: "React.js",
-    icon: "/assets/icons/react.svg",
-    alt: "Icono de React"
-  },
-  {
-    name: "Vue.js",
-    icon: "/assets/icons/vue.svg",
-    alt: "Icono de Vue"
-  },
-  {
-    name: "Astro",
-    icon: "/assets/icons/astro.svg",
-    alt: "Icono de Astro"
-  },
-  {
-    name: "Tailwind CSS",
-    icon: "/assets/icons/tailwindcss.svg",
-    alt: "Icono de Tailwind CSS"
-  },
-  {
-    name: "Node.js",
-    icon: "/assets/icons/nodejs.svg",
-    alt: "Icono de Node"
-  },
-  {
-    name: "MongoDB",
-    icon: "/assets/icons/mongodb.svg",
-    alt: "Icono de MongoDB"
-  },
-  {
-    name: "Git",
-    icon: "/assets/icons/git.svg",
-    alt: "Icono de Git"
-  },
-  {
-    name: "Figma",
-    icon: "/assets/icons/figma.svg",
-    alt: "Icono de Figma"
-  },
-  {
-    name: "Adobe XD",
-    icon: "/assets/icons/adobe-xd.svg",
-    alt: "Icono de Adobe XD"
-  }
-]
+import TOOLS from "../constants/tools"
 ---
 
 <section class="max-w-4xl mx-auto scroll-m-20">
   <h2 class="text-2xl font-geist font-light mb-14">Habilidades</h2>
   <ul class="grid grid-cols-4 lg:grid-cols-6 gap-5 md:gap-8 content-end">
     {
-      skills.map(skill => (
+      Object.values(TOOLS).map(value => (
         <figure class="flex flex-col items-center justify-between gap-3 grayscale hover:grayscale-0 hover:text-white transition-all duration-300 select-none">
-          <img src={skill.icon} alt={skill.alt} class="size-10 m-auto" />
+          <img src={value.src} alt={value.alt} class="size-10 m-auto" />
           <figcaption class="text-center font-geist font-semibold text-neutral-500">
-            {skill.name}
+            {value.name}
           </figcaption>
         </figure>
       ))
