@@ -1,7 +1,38 @@
-<header class="p-6">
-    <nav class="flex justify-center gap-5 font-medium text-neutral-300">
-        <a class="hover:text-teal-200 transition-colors cursor-pointer">Inicio</a>
-        <a class="hover:text-teal-200 transition-colors cursor-pointer">Acerca de mi</a>
-        <a class="hover:text-teal-200 transition-colors cursor-pointer">Proyectos</a>
-    </nav>
+---
+const items = [
+  {
+    title: "Inicio",
+    url: "#"
+  },
+  {
+    title: "Proyectos",
+    url: "#projects"
+  },
+  {
+    title: "Acerca de mi",
+    url: "#about"
+  }
+]
+---
+
+<header class="mx-auto p-6">
+  <nav
+    aria-label="Main"
+    class="flex justify-center font-medium text-neutral-300"
+  >
+    <ul class="flex gap-5">
+      {
+        items.map(item => (
+          <li>
+            <a
+              href={item.url}
+              class="hover:text-portage transition-colors cursor-pointer"
+            >
+              {item.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
 </header>
