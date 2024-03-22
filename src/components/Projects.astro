@@ -3,6 +3,7 @@ import Badge from "./Badge.astro"
 import Button from "./Button.astro"
 import GithubIcon from "./icons/GithubIcon.astro"
 import LinkIcon from "./icons/LinkIcon.astro"
+import { Image } from "astro:assets"
 import PROJECTS from "../constants/projects"
 ---
 
@@ -21,9 +22,12 @@ import PROJECTS from "../constants/projects"
                 image.order
               ]}
             >
-              <img
+              <Image
+                width="440"
+                height="340"
                 src={image.src}
                 alt={image.alt}
+                loading={image.loading}
                 class="object-cover hover:scale-110 transition-transform duration-300"
               />
             </div>

@@ -7,6 +7,7 @@ const PROJECTS = [
         image: {
             src: "/assets/tasky.avif",
             alt: "Imagen del proyecto Tasky",
+            loading: "eager",
             order: "md:order-2"
         },
         demo: "https://tasky-ochre.vercel.app/",
@@ -19,6 +20,7 @@ const PROJECTS = [
         image: {
             src: "/assets/symphony.avif",
             alt: "Imagen del proyecto Symphony",
+            loading: "lazy",
             order: ""
         },
         demo: "https://symphony-nine.vercel.app/",
@@ -31,6 +33,7 @@ const PROJECTS = [
         image: {
             src: "/assets/timeless.avif",
             alt: "Imagen del proyecto Timeless",
+            loading: "lazy",
             order: "md:order-2"
         }, 
         demo: "https://timeless-navy.vercel.app/",
