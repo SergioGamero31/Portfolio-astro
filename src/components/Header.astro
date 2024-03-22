@@ -2,7 +2,7 @@
 const items = [
   {
     title: "Inicio",
-    url: "#"
+    url: "/#"
   },
   {
     title: "Proyectos",
@@ -20,13 +20,13 @@ const items = [
     aria-label="Main"
     class="flex justify-center font-medium text-neutral-300"
   >
-    <ul class="flex gap-5">
+    <ul class="flex md:gap-5 lg:gap-8">
       {
         items.map(item => (
           <li>
             <a
               href={item.url}
-              class="hover:text-portage transition-colors cursor-pointer"
+              class="hover:text-portage transition-colors cursor-pointer p-4 lg:p-0"
             >
               {item.title}
             </a>
