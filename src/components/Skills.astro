@@ -1,18 +1,25 @@
 ---
 import TOOLS from "../constants/tools"
+
+const toolsArray = Object.values(TOOLS)
+const filteredTools = toolsArray.filter(
+  tool => tool.name !== "Express" && tool.name !== "Pinia"
+)
 ---
 
-<section class="max-w-4xl mx-auto scroll-m-20">
+<section class="max-w-4xl mx-auto scroll-m-20 pb-32">
   <h2 class="text-2xl font-geist font-light mb-14">Habilidades</h2>
-  <ul class="grid grid-cols-4 lg:grid-cols-6 gap-5 md:gap-8 content-end">
+  <ul class="grid grid-cols-4 lg:grid-cols-6 gap-5 md:gap-8 place-items-center">
     {
-      Object.values(TOOLS).map(value => (
-        <figure class="flex flex-col items-center justify-between gap-3 grayscale hover:grayscale-0 hover:text-white transition-all duration-300 select-none">
-          <img src={value.src} alt={value.alt} class="size-10 m-auto" />
-          <figcaption class="text-center font-geist font-semibold text-neutral-500">
-            {value.name}
-          </figcaption>
-        </figure>
+      filteredTools.map(tool => (
+        <li>
+          <figure class="group flex flex-col items-center justify-between gap-3 grayscale hover:grayscale-0 hover:text-white transition-all duration-300 select-none">
+            <img src={tool.src} alt={tool.alt} class="size-10 m-auto" />
+            <figcaption class="text-center font-geist font-semibold text-neutral-500 group-hover:text-white transition-colors duration-300">
+              {tool.name}
+            </figcaption>
+          </figure>
+        </li>
       ))
     }
   </ul>
