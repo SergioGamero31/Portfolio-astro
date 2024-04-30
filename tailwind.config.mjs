@@ -11,7 +11,7 @@ export default {
 				}
 			},
 			fontFamily: {
-				'geist': ['Geist Sans']
+				'geist': ['Geist Sans', 'system-ui']
 			}
 		},
 	},
