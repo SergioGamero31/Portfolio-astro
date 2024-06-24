@@ -7,18 +7,18 @@ import { Image } from "astro:assets"
 import PROJECTS from "../constants/projects"
 ---
 
-<section id="projects" class="max-w-4xl mx-auto scroll-m-20">
+<section id="projects" class="max-w-5xl mx-auto scroll-m-20">
   <h2 class="text-2xl max-w-xs font-geist font-light my-14">
     Estos son algunos proyectos en los que he trabajado
   </h2>
-  <div class="flex flex-col gap-16">
+  <div class="flex flex-col gap-20">
     {
       PROJECTS.map(({ title, description, image, github, demo, tags }) => {
         return (
           <article class="flex flex-col md:flex-row gap-10 justify-between">
             <div
               class:list={[
-                "flex w-full md:w-1/2 rounded-xl overflow-hidden",
+                "flex w-full md:w-1/2 lg:w-fit rounded-xl overflow-hidden",
                 image.order
               ]}
             >
@@ -31,7 +31,7 @@ import PROJECTS from "../constants/projects"
                 class="object-cover hover:scale-110 transition-transform duration-300"
               />
             </div>
-            <div class="flex flex-col justify-between gap-4 md:w-1/2">
+            <div class="flex flex-col justify-between gap-4 md:w-1/2 lg:w-[28rem]">
               <div class="flex flex-col gap-3 md:">
                 <h3 class="text-xl font-geist font-light">{title}</h3>
                 <p class="text-gray-400 text-balance">{description}</p>
