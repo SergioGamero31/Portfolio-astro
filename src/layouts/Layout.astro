@@ -1,9 +1,12 @@
 ---
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
+
+import "@fontsource/geist-sans/200.css"
 import "@fontsource/geist-sans/300.css"
 import "@fontsource/geist-sans/600.css"
 
+import geistSans200 from '@fontsource/geist-sans/files/geist-sans-latin-200-normal.woff2'
 import geistSans300 from '@fontsource/geist-sans/files/geist-sans-latin-300-normal.woff2'
 import geistSans600 from '@fontsource/geist-sans/files/geist-sans-latin-600-normal.woff2'
 ---
@@ -14,9 +17,10 @@ import geistSans600 from '@fontsource/geist-sans/files/geist-sans-latin-600-norm
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Sergio Gamero</title>
+    <link rel="preload" as="font" type="font/woff2" href={geistSans200} crossorigin/>
     <link rel="preload" as="font" type="font/woff2" href={geistSans300} crossorigin/>
     <link rel="preload" as="font" type="font/woff2" href={geistSans600} crossorigin/>
-    <meta name="description" content="Desarrollador frontend especializado en crear y diseñar experiencias atractivas y funcionales." />
+    <meta name="description" content="Desarrollador Frontend especializado en crear y diseñar experiencias atractivas y funcionales." />
     <meta name="keywords" content="Frontend, React, Javascript" />
     <meta name="author" content="Sergio Gamero" />
     <meta name="robots" content="index" />
