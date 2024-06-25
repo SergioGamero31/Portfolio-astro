@@ -20,11 +20,21 @@ const TOOLS = {
     alt: "Icono de React",
     color: "border-[#149eca]"
   },
+  NEXT: {
+    name: "Next.js",
+    src: "/assets/icons/next.svg",
+    alt: "Icono de Next"
+  },
   VUE: {
     name: "Vue.js",
     src: "/assets/icons/vue.svg",
     alt: "Icono de Vue",
     color: "border-[#42b883]"
+  },
+  NUXT: {
+    name: "Nuxt",
+    src: "/assets/icons/nuxt.svg",
+    alt: "Icono de Nuxt"
   },
   ASTRO: {
     name: "Astro",
