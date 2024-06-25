@@ -2,6 +2,24 @@
 import Button from "./Button.astro"
 import DownloadIcon from "./icons/DownloadIcon.astro"
 import { Image } from "astro:assets"
+
+
+function calculateAge(){
+
+  let today = new Date()
+  let birthday = new Date('2000-03-31')
+  let age = today.getFullYear() - birthday.getFullYear()
+  let month = today.getMonth() - birthday.getMonth()
+
+  if (month < 0 || (month === 0 && today.getDate() < birthday.getDate())) {
+    age--;
+  }
+
+  return  age;
+}
+
+const age = calculateAge()
+
 ---
 
 <section id="about" class="max-w-5xl mx-auto scroll-m-20">
@@ -18,7 +36,7 @@ import { Image } from "astro:assets"
       <div class="flex flex-col gap-3 text-pretty">
         <p>
           Aunque mi nombre es Sergio la mayoría de las personas me llama Andre
-          (mi segundo nombre), tengo 23 años y estudié Ingenieria de Sistemas,
+          (mi segundo nombre), tengo {age} años y estudié Ingenieria de Sistemas,
           donde empecé programando aplicaciones móviles y videojuegos.
         </p>
         <p>
@@ -33,7 +51,6 @@ import { Image } from "astro:assets"
           mis hobbies: los autos, el fitness y los videojuegos.
         </p>
       </div>
-
       <Button
         href="https://drive.google.com/file/d/192fziXEWKEkvBCAenznAjY9ze5M0hQOj/view"
         type="primary"
