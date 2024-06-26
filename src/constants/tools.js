@@ -14,6 +14,10 @@ const TOOLS = {
     src: "/assets/icons/javascript.svg",
     alt: "Icono de JavaScript"
   },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    src: "assets/icons/typescript.svg"
+  },
   REACT: {
     name: "React.js",
     src: "/assets/icons/react.svg",
